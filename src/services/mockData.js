@@ -1,10 +1,10 @@
 // Dados fictícios para desenvolver sem backend. Substitua pela API (VITE_USE_MOCK=false).
 export const db = {
   criterios: [
-    { id: 1, nome: "Domicílios sem energia elétrica", tipo: "B", peso: 0.35, unidade: "%" },
-    { id: 2, nome: "População abaixo da linha de pobreza", tipo: "B", peso: 0.3, unidade: "%" },
-    { id: 3, nome: "IDH municipal", tipo: "C", peso: 0.2, unidade: "índice" },
-    { id: 4, nome: "Capacidade solar instalada", tipo: "C", peso: 0.15, unidade: "kW/1000 hab" },
+    { id: 1, nome: "Domicílios sem energia elétrica", tipo: "C", peso: 0.35, unidade: "%" },
+    { id: 2, nome: "População abaixo da linha de pobreza", tipo: "C", peso: 0.3, unidade: "%" },
+    { id: 3, nome: "IDH municipal", tipo: "B", peso: 0.2, unidade: "índice" },
+    { id: 4, nome: "Capacidade solar instalada", tipo: "B", peso: 0.15, unidade: "kW/1000 hab" },
   ],
   municipios: [
     { id: 1, nome: "Juazeiro", uf: "BA", populacao: 237000, lat: -9.41, lng: -40.5, valores: { 1: 2.1, 2: 31, 3: 0.68, 4: 14 } },

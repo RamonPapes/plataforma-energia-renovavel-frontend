@@ -28,7 +28,7 @@ export default function Criterios() {
   return (
     <>
       <h1>Critérios e pesos</h1>
-      <p className="nota">Benefício (B): quanto maior o valor, maior a vulnerabilidade. Custo (C): quanto maior o valor, menor a vulnerabilidade. Os pesos são normalizados no cálculo.</p>
+      <p className="nota">Benefício (B): quanto maior o valor, melhor (menos vulnerável). Custo (C): quanto maior o valor, pior (mais vulnerável). Ao salvar, os pesos são normalizados para somar 1.</p>
       <div className="card">
         <table>
           <thead><tr><th>Critério</th><th>Tipo</th><th>Peso</th></tr></thead>

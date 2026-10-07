@@ -1,5 +1,5 @@
 // TOPSIS (diagrama de atividades 4.4). Critério tipo "B" = benefício, "C" = custo.
-// Neste projeto, Ci mais alto = maior vulnerabilidade/prioridade de intervenção.
+// Como no roteiro e na API: Ci mais alto = MENOS vulnerável (1º lugar = menos vulnerável).
 export function calcularTopsis(alternativas, criterios) {
   const soma = criterios.reduce((s, c) => s + Number(c.peso), 0) || 1;
   const valor = (a, c) => Number(a.valores?.[c.id] ?? 0);

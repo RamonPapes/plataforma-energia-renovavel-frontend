@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { PERFIS, useAuth } from "../hooks/useAuth";
+import { USE_MOCK } from "../services/api";
 
 export default function Login() {
   const { user, entrar } = useAuth();
@@ -25,9 +26,12 @@ export default function Login() {
         <h1>Entrar</h1>
         <label>E-mail<input type="email" required value={f.email} onChange={set("email")} /></label>
         <label>Senha<input type="password" required value={f.senha} onChange={set("senha")} /></label>
-        <label>Perfil
-          <select value={f.perfil} onChange={set("perfil")}>{PERFIS.map((p) => <option key={p}>{p}</option>)}</select>
-        </label>
+        {/* com a API real, o perfil vem do cadastro do usuário; a escolha só existe no modo mock */}
+        {USE_MOCK && (
+          <label>Perfil
+            <select value={f.perfil} onChange={set("perfil")}>{PERFIS.map((p) => <option key={p}>{p}</option>)}</select>
+          </label>
+        )}
         {erro && <p className="erro" role="alert">{erro}</p>}
         <button type="submit">Entrar</button>
       </form>
