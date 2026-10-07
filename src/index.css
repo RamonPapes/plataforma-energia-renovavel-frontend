@@ -8,7 +8,7 @@ h2{font-size:1.1rem;margin:0 0 .75rem}
 .topo nav a{color:var(--muted);text-decoration:none;padding:.2rem 0;border-bottom:2px solid transparent}
 .topo nav a:hover{color:var(--texto)}
 .topo nav a.active{color:var(--verde);border-bottom-color:var(--verde)}
-.user{font-size:.9rem;color:var(--muted)}
+.user{font-size:.9rem;color:var(--muted)}.user a{color:var(--verde)}
 main{padding:1.5rem;max-width:1100px;margin:0 auto}
 .card{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:1rem;margin-bottom:1rem}
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1rem}
@@ -31,11 +31,19 @@ button.ghost{background:#fff;color:var(--texto);border:1px solid #bbb}
 button.ghost:hover:not(:disabled){background:#eee}
 button.link{background:none;color:var(--verde);padding:0 .3rem;text-decoration:underline}
 button.link:hover:not(:disabled){background:none}
+button.perigo{color:var(--erro);border-color:var(--erro)}
+button.perigo:hover:not(:disabled){background:#fbeceb}
 :focus-visible{outline:2px solid var(--verde);outline-offset:2px}
 .acoes{display:flex;gap:.7rem;align-items:center;margin:.9rem 0 0}
 .mapa{height:340px}
 .nota{color:var(--muted);max-width:70ch}.erro{color:var(--erro)}.ok{color:var(--verde)}
 .vazio{color:var(--muted)}
+.filtro{max-width:220px}
+.rolagem{overflow-x:auto}
+.botoes{display:flex;gap:.4rem;justify-content:flex-end;flex-wrap:wrap}
+.botoes button{padding:.3rem .6rem;font-size:.85rem}
+tr.selecionada td{background:#eef5f0}
+.dados{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1rem;margin:0 0 1rem}.dados dt{color:var(--muted)}.dados dd{margin:0}
 .login{min-height:100vh;display:grid;place-items:center;padding:1rem}
 .login .card{width:100%;max-width:360px}
 @media(max-width:760px){main{padding:1rem}.topo{gap:.7rem}}

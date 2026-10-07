@@ -16,4 +16,9 @@ export const db = {
     { id: 7, nome: "Chapecó", uf: "SC", populacao: 254000, lat: -27.1, lng: -52.61, valores: { 1: 0.3, 2: 8, 3: 0.79, 4: 31 } },
   ],
   simulacoes: [],
+  usuarios: [
+    { id: 1, nome: "Administrador", email: "admin@exemplo.com", perfil: "Administrador", created_at: "2026-01-05T12:00:00Z" },
+    { id: 2, nome: "Pesquisador", email: "pesquisador@exemplo.com", perfil: "Pesquisador", created_at: "2026-01-05T12:00:00Z" },
+    { id: 3, nome: "Gestor Público", email: "gestor@exemplo.com", perfil: "Gestor Público", created_at: "2026-01-05T12:00:00Z" },
+  ],
 };

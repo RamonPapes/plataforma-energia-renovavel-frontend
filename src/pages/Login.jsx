@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { PERFIS, useAuth } from "../hooks/useAuth";
 import { USE_MOCK } from "../services/api";
 
@@ -34,6 +34,7 @@ export default function Login() {
         )}
         {erro && <p className="erro" role="alert">{erro}</p>}
         <button type="submit">Entrar</button>
+        <p><Link to="/esqueci-senha">Esqueci minha senha</Link></p>
       </form>
     </div>
   );

@@ -13,10 +13,16 @@ export function AuthProvider({ children }) {
     localStorage.setItem("usuario", JSON.stringify(usuario));
     setUser(usuario);
   }
+  // mantém a sessão em dia quando o próprio usuário é editado (nome, e-mail)
+  function atualizarSessao(dados) {
+    const usuario = { ...user, ...dados };
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+    setUser(usuario);
+  }
   function sair() {
     localStorage.clear();
     setUser(null);
   }
-  return <AuthContext.Provider value={{ user, entrar, sair }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, entrar, sair, atualizarSessao }}>{children}</AuthContext.Provider>;
 }
 export const useAuth = () => useContext(AuthContext);
