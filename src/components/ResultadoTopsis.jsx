@@ -8,7 +8,7 @@ export default function ResultadoTopsis({ simulacao }) {
   const { ranking, id } = simulacao;
   return (
     <section className="resultado">
-      <p className="nota">Quanto mais perto de 1, maior a vulnerabilidade do município.</p>
+      <p className="nota">Quanto mais perto de 1, menor a vulnerabilidade do município: o 1º lugar é o menos vulnerável e o último, o mais vulnerável.</p>
       <div className="grid-2">
         <div className="card"><RankingChart ranking={ranking} /></div>
         <div className="card"><MapaVulnerabilidade ranking={ranking} /></div>

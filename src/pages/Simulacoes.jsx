@@ -20,7 +20,7 @@ export default function Simulacoes() {
             <tbody>
               {data.map((s) => (
                 <tr key={s.id}>
-                  <td>#{s.id}</td><td>{fmtData(s.data_execucao)}</td><td>{s.ranking[0].nome}/{s.ranking[0].uf}</td>
+                  <td>#{s.id}</td><td>{fmtData(s.data_execucao)}</td><td>{s.ranking[s.ranking.length - 1].nome}/{s.ranking[s.ranking.length - 1].uf}</td>
                   <td><button className="ghost" onClick={() => setAberta(s.id)}>Ver resultado</button></td>
                 </tr>
               ))}

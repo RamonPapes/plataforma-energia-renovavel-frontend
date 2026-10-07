@@ -12,6 +12,8 @@ export default function Dashboard() {
   if (error) return <p className="erro">{error}</p>;
   const [municipios, criterios, simulacoes] = data;
   const ultima = simulacoes[0];
+  // o ranking vai do menos para o mais vulnerável
+  const maisVulneravel = ultima?.ranking[ultima.ranking.length - 1];
   return (
     <>
       <h1>Painel</h1>
@@ -19,7 +21,7 @@ export default function Dashboard() {
         <StatCard valor={municipios.length} rotulo="municípios cadastrados" />
         <StatCard valor={criterios.length} rotulo="critérios de vulnerabilidade" />
         <StatCard valor={simulacoes.length} rotulo="simulações executadas" />
-        <StatCard valor={ultima ? `${ultima.ranking[0].nome}/${ultima.ranking[0].uf}` : "—"} rotulo="mais vulnerável na última simulação" />
+        <StatCard valor={maisVulneravel ? `${maisVulneravel.nome}/${maisVulneravel.uf}` : "—"} rotulo="mais vulnerável na última simulação" />
       </div>
       {ultima ? <ResultadoTopsis simulacao={ultima} /> : (
         <div className="card vazio">Nenhuma simulação ainda. <Link to="/topsis">Execute o TOPSIS</Link> para ver o ranking e o mapa aqui.</div>
