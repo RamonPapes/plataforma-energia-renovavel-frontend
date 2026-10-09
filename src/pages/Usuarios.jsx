@@ -64,7 +64,7 @@ export default function Usuarios() {
       <h1>Usuários</h1>
       <p className="nota">Administrador: acesso total. Pesquisador: configura critérios, pesos e a matriz de decisão. Gestor Público: consulta, executa o TOPSIS e baixa relatórios.</p>
       {(msg.ok || msg.erro) && <p className={msg.erro ? "erro" : "ok"} role="status">{msg.erro || msg.ok}</p>}
-      <div className="grid-2">
+      <div className="grid-2 grid-usuarios">
         <div className="card">
           <label className="filtro">Perfil
             <select value={filtro} onChange={(e) => setFiltro(e.target.value)}>
@@ -82,10 +82,13 @@ export default function Usuarios() {
                       <td>{u.nome}{u.id === user.id && <small> (você)</small>}<br /><small className="nota">{u.email}</small></td>
                       <td>{u.perfil}</td>
                       <td>{u.created_at ? fmtDia(u.created_at) : "—"}</td>
-                      <td className="botoes">
-                        <button className="ghost" onClick={() => editar(u)}>Editar</button>
-                        {/* a API não deixa o administrador remover a própria conta */}
-                        {u.id !== user.id && <button className="ghost perigo" onClick={() => remover(u)}>Remover</button>}
+                      <td className="col-acoes">
+                        {/* os botões ficam numa div: um <td> com display:flex deixa de ser célula de tabela e vaza para a linha de baixo */}
+                        <div className="botoes">
+                          <button type="button" className="ghost" onClick={() => editar(u)}>Editar</button>
+                          {/* a API não deixa o administrador remover a própria conta */}
+                          {u.id !== user.id && <button type="button" className="ghost perigo" onClick={() => remover(u)}>Remover</button>}
+                        </div>
                       </td>
                     </tr>
                   ))}
